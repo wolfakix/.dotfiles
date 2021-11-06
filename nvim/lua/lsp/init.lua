@@ -8,6 +8,15 @@ local langservers = {
   'tsserver',
   'pyright',
   'clangd',
+	'emmet_ls',
+  'gopls'
+}
+require "lspconfig/configs".emmet_ls = {
+  default_config = {
+    cmd = {"emmet-ls", "--stdio"},
+    filetypes = {"html", "css", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact"},
+    root_dir = require "lspconfig".util.root_pattern(".git", vim.fn.getcwd())
+  }
 }
 
 for _, server in ipairs(langservers) do
@@ -20,7 +29,6 @@ end
 
 local sumneko_binary_path = vim.fn.exepath('lua-language-server')
 local sumneko_root_path = vim.fn.fnamemodify(sumneko_binary_path, ':h:h:h')
-
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
@@ -53,3 +61,17 @@ lspconfig.sumneko_lua.setup {
 
 
 -------------------------------------------------------------------------------------------------------------------------
+
+
+
+-- lspconfig.gopls.setup {
+-- cmd = {"gopls", "serve"},
+-- settings = {
+--   gopls = {
+--     analyses = {
+--       unusedparams = true,
+--     },
+--     staticcheck = true,
+--   },
+-- },
+-- }
