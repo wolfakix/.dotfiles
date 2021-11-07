@@ -17,21 +17,12 @@ require('lsp')
 require('nvim_comment').setup()
 require("toggleterm").setup{}
 require'colorizer'.setup()
-vim.cmd[[
-nnoremap <silent><S-TAB> :BufferLineCycleNext<CR>
-]]
+require'bufferline'.setup{}
 vim.opt.termguicolors = true
--- vim.opt.list = true
--- vim.opt.listchars:append("space:⋅")
--- vim.opt.listchars:append("eol:↴")
--- 
 require("indent_blankline").setup {
     space_char_blankline = " ",
     show_current_context = true,
     show_current_context_start = true,
 }
 
-require'bufferline'.setup{}
-vim.g.dashboard_custom_footer = {
-	'',
-}
+
