@@ -8,15 +8,7 @@ local langservers = {
   'tsserver',
   'pyright',
   'clangd',
-	'emmet_ls',
   'gopls'
-}
-require "lspconfig/configs".emmet_ls = {
-  default_config = {
-    cmd = {"emmet-ls", "--stdio"},
-    filetypes = {"html", "css", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact"},
-    root_dir = require "lspconfig".util.root_pattern(".git", vim.fn.getcwd())
-  }
 }
 
 for _, server in ipairs(langservers) do

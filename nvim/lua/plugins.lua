@@ -13,12 +13,9 @@ return require('packer').startup(function(use)
     'norcalli/nvim-colorizer.lua',
     'windwp/nvim-autopairs',
 		'hrsh7th/vim-vsnip',
-    'folke/tokyonight.nvim',
-    'Pocco81/Catppuccino.nvim',
-    'ful1e5/onedark.nvim',
 		'glepnir/dashboard-nvim',
-		"lukas-reineke/indent-blankline.nvim",
-    'nvim-treesitter/nvim-treesitter',
+		'sheerun/vim-polyglot',
+		'shaunsingh/nord.nvim'
   }
 	-- using packer.nvim
 use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
@@ -47,5 +44,17 @@ use {
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
+-- Lua
+use {
+  "folke/which-key.nvim",
+  config = function()
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
+
 end)
 

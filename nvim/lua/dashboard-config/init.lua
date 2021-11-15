@@ -21,48 +21,35 @@ vim.cmd[[let g:dashboard_custom_header =<< trim END
  `''                                                                      ``'
 END]]
 
--- vim.g.dashboard_custom_section = {
---     a = {description = {'  Open Project'}, command = 'Telescope marks'},
---     b = {description = {'⚙  Open init.lua'}, command = ':e ~/.config/nvim/init.lua'},
---     c = {description = {'  Open Neovim Configuration'}, command = ':e ~/.config/nvim/lua/'},
---     d = {description = {'  Recently Opened Files'}, command = 'Telescope oldfiles'},
---     e = {description = {'  Jump to Bookmark'}, command = 'Telescope project'},
---     f = {description = {'  Find File'}, command = 'Telescope find_files'},
---     g = {description = {'  Reload Last Session'}, command = 'SessionLoad'},
--- }
--- vim.g.dashboard_custom_section = {
---     a = {
---       description = { "  Load Last Session              SPC s r" },
---       command = "SessionLoad",
---     },
---     b = {
---       description = { "  Recently Opened Files          SPC f r" },
---       command = "Telescope oldfiles",
---     },
---     c = {
---       description = { "  Jump to Bookmark               SPC s m" },
---       command = "Telescope marks",
---     },
---     d = {
---       description = { "  Find File                      SPC f f" },
---       command = "Telescope find_files",
---     },
---     e = {
---       description = { "  Find Word                      SPC s g" },
---       command = "Telescope live_grep",
---     },
---     f = {
---       description = { "  Open Private Configuration     SPC d c" },
---       command = ':e ~/.config/nvim/',
---     },
---   }
+
 local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
-vim.g.dashboard_custom_footer = { "Loaded " .. plugins_count .. " plugins" }
+vim.g.dashboard_custom_footer = { "Loaded " .. plugins_count .. " Plugins" }
 vim.cmd[[
-nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
+nnoremap <silent> <Leader>fb :DashboardJumpMarks<CR>
 nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
 nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
+nnoremap <silent> <Leader>fh :Telescope oldfiles<CR>
 nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
-nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
-nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
+nnoremap <silent> <Leader>sl :SessionLoad<CR>
+nnoremap <silent> <Leader>fc :e ~/.config/nvim<CR>
 ]]
+
+vim.g.dashboard_custom_section = {
+	a = {description = {'  Jump to Bookmarks              SPC f b'}, command = 'DashboardJumpMarks'},
+	-- b = {description = {' Change colorscheme						 SPC t c'}, command = 'DashboardChangeColorscheme'},
+	c = {description = {'  Find File                      SPC f f'}, command = 'Telescope find_files'},
+	d = {description = {'  Recently Opened Files          SPC f h'}, command = 'Telescope oldfiles'},
+	e = {description = {'  Find Word                      SPC f a'}, command = 'Telescope live_grep'},
+	f = {description = {'  Reload Last Session            SPC s l'}, command = 'SessionLoad'},
+	g = {description = {'  Open Private Configuration     SPC f c'}, command = 'e ~/.config/nvim/'},
+
+}
+
+-- vim.cmd[[let g:dashboard_custom_header =<< trim END
+-- __        _____  _     _____ _    _  _______  __
+-- \ \      / / _ \| |   |  ___/ \  | |/ /_ _\ \/ /
+--  \ \ /\ / / | | | |   | |_ / _ \ | ' / | | \  /
+--   \ V  V /| |_| | |___|  _/ ___ \| . \ | | /  \
+--    \_/\_/  \___/|_____|_|/_/   \_\_|\_\___/_/\_\
+-- END]]
+-- 
