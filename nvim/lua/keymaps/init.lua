@@ -1,3 +1,4 @@
+vim.g.mapleader = ' '
 vim.api.nvim_command("set number")
 vim.api.nvim_command("set mouse=a")
 vim.api.nvim_command("set tabstop=2")

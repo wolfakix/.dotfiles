@@ -1,26 +1,24 @@
 return require('packer').startup(function(use)
-  use {
-    'wbthomason/packer.nvim',
-    'prettier/vim-prettier',
-    'kyazdani42/nvim-web-devicons',
-    'akinsho/toggleterm.nvim',
-		'neovim/nvim-lspconfig',
-		'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-nvim-lua',
-		'onsails/lspkind-nvim',
-    'terrortylor/nvim-comment',
-    'hrsh7th/nvim-cmp',
-    'norcalli/nvim-colorizer.lua',
-    'windwp/nvim-autopairs',
-		'hrsh7th/vim-vsnip',
-		'glepnir/dashboard-nvim',
-		'sheerun/vim-polyglot',
-		'shaunsingh/nord.nvim'
-  }
-	-- using packer.nvim
-use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-
-
+  use 'wbthomason/packer.nvim'
+  use {'kyazdani42/nvim-web-devicons'}
+	use {'akinsho/toggleterm.nvim'}
+	use	{'neovim/nvim-lspconfig'}
+	use	{'hrsh7th/cmp-nvim-lsp'}
+  use {'hrsh7th/cmp-nvim-lua'}
+	use	{'onsails/lspkind-nvim'}
+  use {'terrortylor/nvim-comment'}
+  use {'hrsh7th/nvim-cmp'}
+  use {'norcalli/nvim-colorizer.lua'}
+  use {'windwp/nvim-autopairs'}
+	use	{'hrsh7th/vim-vsnip'}
+	use	{'glepnir/dashboard-nvim'}
+	use	{'sheerun/vim-polyglot'}
+	use	{'shaunsingh/nord.nvim'}
+	use	{'lukas-reineke/format.nvim'}
+	use {"lukas-reineke/indent-blankline.nvim"}
+	use {'folke/tokyonight.nvim'}
+	use {'nvim-treesitter/nvim-treesitter'}
+	use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 	use {
 	 	'hoob3rt/lualine.nvim',
 	   	requires = {'kyazdani42/nvim-web-devicons', opt = true},
@@ -34,17 +32,10 @@ use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
   }
--- 	use {
---     'goolord/alpha-nvim',
---     config = function ()
---         require'alpha'.setup(require'alpha.themes.dashboard'.opts)
---     end
--- }
 use {
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
--- Lua
 use {
   "folke/which-key.nvim",
   config = function()
