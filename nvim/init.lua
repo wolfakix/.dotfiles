@@ -8,6 +8,7 @@ vim.opt.cursorcolumn = true
 vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.termguicolors = true
+
 require('nvim-tree-config')
 require('keymaps')
 require('nvim-autopairs').setup{}
