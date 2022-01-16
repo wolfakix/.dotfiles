@@ -218,5 +218,5 @@ local lualine = require 'lualine'
 -- 
 -- -- Now don't forget to initialize lualine
 require('lualine').setup({
-    options = { theme = 'rose-pine' }
+    options = { theme = 'auto' }
 })

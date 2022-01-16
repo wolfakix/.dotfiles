@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -104,11 +109,6 @@ _G.packer_plugins = {
     path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
   },
-  neovim = {
-    loaded = true,
-    path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/neovim",
-    url = "https://github.com/rose-pine/neovim"
-  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -123,11 +123,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
-    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-comment"] = {
     loaded = true,
@@ -164,31 +159,21 @@ _G.packer_plugins = {
     path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["presence.nvim"] = {
+  ["rose-pine"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0" },
     loaded = true,
-    path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/presence.nvim",
-    url = "https://github.com/andweeb/presence.nvim"
-  },
-  ["stabilize.nvim"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14stabilize\frequire\0" },
-    loaded = true,
-    path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/stabilize.nvim",
-    url = "https://github.com/luukvbaal/stabilize.nvim"
+    path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-polyglot"] = {
+  ["vim-fugitive"] = {
     loaded = true,
-    path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/vim-polyglot",
-    url = "https://github.com/sheerun/vim-polyglot"
-  },
-  ["vim-svelte"] = {
-    loaded = true,
-    path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/vim-svelte",
-    url = "https://github.com/evanleck/vim-svelte"
+    path = "/Users/grammenoudis/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-vinegar"] = {
     loaded = true,
@@ -209,14 +194,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: rose-pine
+time([[Config for rose-pine]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
+time([[Config for rose-pine]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
--- Config for: stabilize.nvim
-time([[Config for stabilize.nvim]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14stabilize\frequire\0", "config", "stabilize.nvim")
-time([[Config for stabilize.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

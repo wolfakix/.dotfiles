@@ -13,3 +13,4 @@ function vim -d 'Run neovim instead of vim if nvim is installed'
 end  
 set PATH $PATH="$HOME/tools/lua-language-server/bin/macOS:$PATH"
 alias luamake=/Users/grammenoudis/tools/lua-language-server/3rd/luamake/luamake
+alias v=nvim
